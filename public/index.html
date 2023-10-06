@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patent Document Downloader</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+<body>
+    <h1>Patent Document Downloader</h1>
+    <form action="#" method="POST" id="documentForm">
+        <label for="patentNumber">Document Number:</label>
+        <input type="text" id="patentNumber" name="patentNumber" required>
+        <br>
+        <label for="documentType">Document Type:</label>
+        <select id="documentType" name="documentType">
+            <option value="application">Application</option>
+            <option value="granted">Granted</option>
+        </select>
+        <br>
+        <label for="grantedCheckbox">Granted Documents:</label>
+        <input type="checkbox" id="grantedCheckbox" name="grantedCheckbox">
+        <br>
+        <label for="patentAsFiledCheckbox">Patent as Filed:</label>
+        <input type="checkbox" id="filedCheckbox" name="patentAsFiledCheckbox">
+        <br>
+        <div id="subCheckboxes" style="display: none;">
+            <label for="abstractCheckbox">Abstract:</label>
+            <input type="checkbox" id="abstractCheckbox" name="abstractCheckbox" value="ABST">
+            <br>
+            <label for="claimsCheckbox">Claims:</label>
+            <input type="checkbox" id="claimsCheckbox" name="claimsCheckbox" value="CLM">
+            <br>
+            <label for="specificationCheckbox">Specification:</label>
+            <input type="checkbox" id="specificationCheckbox" name="specificationCheckbox" value="SPEC">
+        </div>
+        <br>
+        <input type="submit" value="Fetch and Download Document">
+        <br>
+    <div id="download-button-container">
+        <!-- Download button for Granted documents -->
+        <a id="downloadGrantedButton" style="display: none;" download="granted_document.pdf">
+            <button>Download Granted Document</button>
+        </a>
+    
+        <!-- Download link for Application documents -->
+    <div id="download-button-container" style="display: none;">
+        <!-- Button to download the zip file -->
+    <button id="downloadZipButton">Download Zip File</button>
+
+    </div>
+
+    </div>
+
+    </form>
+    <br>
+    <div id="progress-container">
+        <div id="progress-bar"></div>
+    </div>
+    <br>
+    <p id="message"></p>
+    <script src="script.js"></script>
+</body>
+
+</html>
